@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
         }`}
       >
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 leading-tight">
-          Handcrafted Gold & Silver Jewelry in <span className="text-gold-500">Blossom Village</span>
+          Handcrafted Gold & Silver Jewelry in <span className="text-gold-500">Basara</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-white/90 mb-8 font-light">
