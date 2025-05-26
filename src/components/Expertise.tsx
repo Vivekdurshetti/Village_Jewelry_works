@@ -99,7 +99,7 @@ const Expertise: React.FC = () => {
               className="rounded-lg shadow-lg h-64 object-cover object-center transform transition-transform hover:scale-105"
             />
             <img 
-              src="https://images.pexels.com/photos/9428826/pexels-photo-9428826.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              src="https://i.pinimg.com/736x/ab/14/19/ab1419de80e1ba19f5240db45ed32da7.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
               alt="Silver jewelry display" 
               className="rounded-lg shadow-lg h-64 object-cover object-center transform transition-transform hover:scale-105 mt-8"
             />
