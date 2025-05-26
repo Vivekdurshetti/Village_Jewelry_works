@@ -23,7 +23,7 @@ const About: React.FC = () => {
           <div className="md:w-1/2 mb-10 md:mb-0 md:pr-10">
             <div className="relative">
               <img 
-                src="https://www.freepik.com/free-photo/jeweler-s-hands-making-jewellery_82550794.htm#fromView=search&page=1&position=30&uuid=dfd3f890-46a3-4c86-b7f7-877cedf1d874&query=gold+works?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/TYVB2QHW3BJIVHMOTTJH74N2YY.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                 alt="Jewelry craftsman working on a piece" 
                 className="rounded-lg shadow-xl"
               />
