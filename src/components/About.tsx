@@ -28,7 +28,7 @@ const About: React.FC = () => {
                 className="rounded-lg shadow-xl"
               />
               <div className="absolute -bottom-5 -right-5 w-24 h-24 bg-gold-500 rounded-full flex items-center justify-center">
-                <p className="font-serif text-black-900 font-bold">25+ Years</p>
+                <p className="font-serif text-black-900 font-bold">20+ Years</p>
               </div>
             </div>
           </div>
