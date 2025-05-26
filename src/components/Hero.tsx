@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
         
         <button 
           onClick={scrollToServices}
-          className="px-8 py-3 bg-gold-500 text-black-900 font-medium rounded hover:bg-gold-600 transition-all transform hover:scale-105 shadow-lg"
+          className="px-8 py-3 bg-green-600 text-white font-medium rounded hover:bg-green-700 transition-all transform hover:scale-105 shadow-lg"
         >
           Explore Our Collection
         </button>
