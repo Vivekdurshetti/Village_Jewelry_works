@@ -84,7 +84,7 @@ const Expertise: React.FC = () => {
           
           <div className="lg:w-1/2 grid grid-cols-2 gap-4">
             <img 
-              src="https://images.pexels.com/photos/15869000/pexels-photo-15869000/free-photo-of-jeweler-working-on-silver-jewelry.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              src="https://i.pinimg.com/736x/1b/9a/15/1b9a151d4d2c172b081946b9d7865854.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
               alt="Jeweler crafting a piece" 
               className="rounded-lg shadow-lg h-64 object-cover object-center transform transition-transform hover:scale-105"
             />
