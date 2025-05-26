@@ -35,7 +35,7 @@ const About: React.FC = () => {
           
           <div className="md:w-1/2">
             <p className="text-white/90 text-lg leading-relaxed mb-6">
-              Located in the heart of Blossom Village, we are a family-run jewelry atelier specializing in exquisite gold and silver pieces. With over 25 years of combined experience, our craftsmen blend traditional techniques with contemporary design—ensuring every ornament tells your unique story.
+              Located in the heart of Blossom Village, we are a family-run jewelry atelier specializing in exquisite gold and silver pieces. With over 20 years of combined experience, our craftsmen blend traditional techniques with contemporary design—ensuring every ornament tells your unique story.
             </p>
             <p className="text-white/90 text-lg leading-relaxed mb-8">
               From elegant bridal sets to everyday keepsakes, quality and trust are the cornerstones of our business. Each piece is meticulously handcrafted with attention to detail that honors both the materials and the artisanal tradition.
