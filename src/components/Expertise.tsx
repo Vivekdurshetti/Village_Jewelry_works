@@ -85,12 +85,12 @@ const Expertise: React.FC = () => {
           <div className="lg:w-1/2 grid grid-cols-2 gap-4">
             <img 
               src="https://i.pinimg.com/736x/31/30/09/313009240956ed40d7df7ac9259ca76b.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-              alt="Jeweler crafting a piece" 
+              alt="Gold and silver rings from Basar Jewellery" 
               className="rounded-lg shadow-lg h-64 object-cover object-center transform transition-transform hover:scale-105"
             />
             <img 
               src="https://i.pinimg.com/736x/b2/8d/18/b28d18216cf09378a7ee1e6e5c6cf3c3.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-              alt="Detailed jewelry work" 
+              alt="Gold and silver chains from Basar Jewellery" 
               className="rounded-lg shadow-lg h-64 object-cover object-center transform transition-transform hover:scale-105 mt-8"
             />
             <img 
@@ -100,7 +100,7 @@ const Expertise: React.FC = () => {
             />
             <img 
               src="https://i.pinimg.com/736x/ab/14/19/ab1419de80e1ba19f5240db45ed32da7.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-              alt="Silver jewelry display" 
+              alt="Ear rings from Basar Jewellery" 
               className="rounded-lg shadow-lg h-64 object-cover object-center transform transition-transform hover:scale-105 mt-8"
             />
           </div>
