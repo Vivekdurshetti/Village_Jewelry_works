@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
       setIsSubmitting(true);
       
       await emailjs.sendForm(
-        'default_service',
+        'service_yvvce2q',
         'template_contact_form',
         form.current,
         'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
