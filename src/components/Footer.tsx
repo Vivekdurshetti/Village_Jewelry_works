@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
             <address className="not-italic text-white/70">
               <p className="mb-3">📍 Beside RCM shop, Basar Village, <br />Nirmal District, Telangana State</p>
               <p className="mb-3">📞 +91-9100432526</p>
-              <p className="mb-3">✉️ info@.com</p>
+              <p className="mb-3">✉️ info@villagejewelry.com</p>
             </address>
           </div>
           
@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-black-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-white/50 text-sm mb-4 md:mb-0">
-              © 2025 Village Jewelry. All Rights Reserved.
+              © 2025 Basar Jewelry. All Rights Reserved.
             </p>
             <div className="flex space-x-6">
               <a href="#" className="text-white/50 text-sm hover:text-gold-500 transition-colors">
