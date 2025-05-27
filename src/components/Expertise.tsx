@@ -95,7 +95,7 @@ const Expertise: React.FC = () => {
             />
             <img 
               src="https://i.pinimg.com/736x/50/26/91/502691410c970509f40df1665ae2c103.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-              alt="Gold jewelry pieces" 
+              alt="Gold Necklace from Basar Jewellery" 
               className="rounded-lg shadow-lg h-64 object-cover object-center transform transition-transform hover:scale-105"
             />
             <img 
