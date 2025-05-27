@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center mb-6">
               <GemIcon className="text-gold-500 h-8 w-8" />
               <span className="ml-2 text-xl font-serif font-semibold text-white">
-                Village <span className="text-gold-500">Jewelry</span>
+                Basar <span className="text-gold-500">Jewelry</span>
               </span>
             </div>
             <p className="text-white/70 mb-6">
