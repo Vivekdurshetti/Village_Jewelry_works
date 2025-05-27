@@ -60,7 +60,7 @@ const Contact: React.FC = () => {
         'service_yvvce2q',
         'template_contact_form',
         form.current,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        'nslwnC_o_V0pC5m3d' // Replace with your EmailJS public key
       );
 
       setFormData({ name: '', email: '', phone: '', message: '' });
