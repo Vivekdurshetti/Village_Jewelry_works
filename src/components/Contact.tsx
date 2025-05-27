@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useInView } from '../hooks/useInView';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const ContactInfo: React.FC<{
   icon: React.ReactNode;
@@ -38,6 +39,8 @@ const Contact: React.FC = () => {
     phone: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const form = useRef<HTMLFormElement>(null);
   
   const { ref, inView } = useInView({ threshold: 0.1 });
 
@@ -46,29 +49,45 @@ const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would send the form data to a server
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    if (!form.current) return;
+
+    try {
+      setIsSubmitting(true);
+      
+      await emailjs.sendForm(
+        'default_service',
+        'template_contact_form',
+        form.current,
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      );
+
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      alert('Thank you for your message! We will get back to you soon.');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Sorry, there was an error sending your message. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: <MapPin className="w-5 h-5" />,
       title: "Address",
-      content: "Main Street, Blossom Village, Sunshine District, Golden State, PIN 12345"
+      content: "Beside RCM shop, Basar Village, Nirmal District, Telangana State"
     },
     {
       icon: <Phone className="w-5 h-5" />,
       title: "Phone",
-      content: "+91-9876543210"
+      content: "+91-9100432526"
     },
     {
       icon: <Mail className="w-5 h-5" />,
       title: "Email",
-      content: <a href="mailto:info@villagejewelry.com" className="hover:text-gold-500 transition-colors">info@villagejewelry.com</a>
+      content: <a href="mailto:8247394051vivek@gmail.com" className="hover:text-gold-500 transition-colors">8247394051vivek@gmail.com</a>
     },
     {
       icon: <Clock className="w-5 h-5" />,
@@ -122,7 +141,7 @@ const Contact: React.FC = () => {
           </div>
           
           <div className="lg:w-1/2">
-            <form onSubmit={handleSubmit} className="bg-black-800 p-8 rounded-lg shadow-lg">
+            <form ref={form} onSubmit={handleSubmit} className="bg-black-800 p-8 rounded-lg shadow-lg">
               <h3 className="text-xl font-serif font-bold text-white mb-6">Send us a Message</h3>
               
               <div className="mb-6">
@@ -183,9 +202,14 @@ const Contact: React.FC = () => {
               
               <button
                 type="submit"
-                className="w-full py-3 bg-gold-500 text-black-900 font-medium rounded-lg hover:bg-gold-600 transition-colors"
+                disabled={isSubmitting}
+                className={`w-full py-3 bg-gold-500 text-black-900 font-medium rounded-lg transition-colors ${
+                  isSubmitting 
+                    ? 'opacity-75 cursor-not-allowed' 
+                    : 'hover:bg-gold-600'
+                }`}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
