@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
       
       await emailjs.sendForm(
         'service_yvvce2q',
-        'template_contact_form',
+        'template_d72x8mf',
         form.current,
         'nslwnC_o_V0pC5m3d' // Replace with your EmailJS public key
       );
