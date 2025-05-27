@@ -44,7 +44,7 @@ const Header: React.FC = () => {
         <div className="flex items-center">
           <GemIcon className="text-gold-500 h-8 w-8" />
           <span className="ml-2 text-xl md:text-2xl font-serif font-semibold text-white">
-            Village <span className="text-gold-500">Jewelry</span>
+            Basar <span className="text-gold-500">Jewelry</span>
           </span>
         </div>
 
