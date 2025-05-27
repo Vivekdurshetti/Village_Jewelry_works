@@ -55,9 +55,9 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-serif font-bold text-white mb-6">Contact</h4>
             <address className="not-italic text-white/70">
-              <p className="mb-3">📍 Main Street, Blossom Village, <br />Sunshine District, Golden State</p>
-              <p className="mb-3">📞 +91-9876543210</p>
-              <p className="mb-3">✉️ info@villagejewelry.com</p>
+              <p className="mb-3">📍 Beside RCM shop, Basar Village, <br />Nirmal District, Telangana State</p>
+              <p className="mb-3">📞 +91-9100432526</p>
+              <p className="mb-3">✉️ info@.com</p>
             </address>
           </div>
           
