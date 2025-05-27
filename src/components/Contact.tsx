@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       title: "Email",
-      content: <a href="mailto:8247394051vivek@gmail.com" className="hover:text-gold-500 transition-colors">8247394051vivek@gmail.com</a>
+      content: <a href="mailto:8247394051vivek@gmail.com\" className="hover:text-gold-500 transition-colors">8247394051vivek@gmail.com</a>
     },
     {
       icon: <Clock className="w-5 h-5" />,
