@@ -103,6 +103,11 @@ const Expertise: React.FC = () => {
               alt="Ear rings from Basar Jewellery" 
               className="rounded-lg shadow-lg h-64 object-cover object-center transform transition-transform hover:scale-105 mt-8"
             />
+            <img 
+              src="/home/project/src/media/Screenshot 2025-05-26 141508.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              alt="Ear rings from Basar Jewellery" 
+              className="rounded-lg shadow-lg h-64 object-cover object-center transform transition-transform hover:scale-105 mt-8"
+            />
           </div>
         </div>
       </div>
