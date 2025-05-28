@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
               <a href="https://instagram.com/villagejewellery" className="w-10 h-10 rounded-full bg-black-800 flex items-center justify-center text-white hover:bg-gold-500 hover:text-black-900 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="https://wa.me/919876543210" className="w-10 h-10 rounded-full bg-black-800 flex items-center justify-center text-white hover:bg-gold-500 hover:text-black-900 transition-colors">
+              <a href="https://wa.me/9100432526" className="w-10 h-10 rounded-full bg-black-800 flex items-center justify-center text-white hover:bg-gold-500 hover:text-black-900 transition-colors">
                 <MessageCircle className="w-5 h-5" />
               </a>
             </div>
