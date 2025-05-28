@@ -17,17 +17,17 @@ const Footer: React.FC = () => {
             <div className="flex items-center mb-6">
               <GemIcon className="text-gold-500 h-8 w-8" />
               <span className="ml-2 text-xl font-serif font-semibold text-white">
-                Basar <span className="text-gold-500">Jewelry</span>
+                Basar <span className="text-gold-500">Jewellery</span>
               </span>
             </div>
             <p className="text-white/70 mb-6">
-              Crafting timeless beauty with precision and passion. Your trusted local jeweler since 2000.
+              Crafting timeless beauty with precision and passion. Your trusted local jeweller since 2000.
             </p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com/villagejewelry" className="w-10 h-10 rounded-full bg-black-800 flex items-center justify-center text-white hover:bg-gold-500 hover:text-black-900 transition-colors">
+              <a href="https://facebook.com/villagejewellery" className="w-10 h-10 rounded-full bg-black-800 flex items-center justify-center text-white hover:bg-gold-500 hover:text-black-900 transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="https://instagram.com/villagejewelry" className="w-10 h-10 rounded-full bg-black-800 flex items-center justify-center text-white hover:bg-gold-500 hover:text-black-900 transition-colors">
+              <a href="https://instagram.com/villagejewellery" className="w-10 h-10 rounded-full bg-black-800 flex items-center justify-center text-white hover:bg-gold-500 hover:text-black-900 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="https://wa.me/919876543210" className="w-10 h-10 rounded-full bg-black-800 flex items-center justify-center text-white hover:bg-gold-500 hover:text-black-900 transition-colors">
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
             <address className="not-italic text-white/70">
               <p className="mb-3">📍 Beside RCM shop, Basar Village, <br />Nirmal District, Telangana State</p>
               <p className="mb-3">📞 +91-9100432526</p>
-              <p className="mb-3">✉️ info@villagejewelry.com</p>
+              <p className="mb-3">✉️ info@villagejewellery.com</p>
             </address>
           </div>
           
@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-black-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-white/50 text-sm mb-4 md:mb-0">
-              © 2025 Basar Jewelry. All Rights Reserved.
+              © 2025 Basar Jewellery. All Rights Reserved.
             </p>
             <div className="flex space-x-6">
               <a href="#" className="text-white/50 text-sm hover:text-gold-500 transition-colors">
