@@ -9,7 +9,7 @@ import 'swiper/css/zoom';
 
 const ringImages = [
   {
-    url: "https://images.pexels.com/photos/9428799/pexels-photo-9428799.jpeg",
+    url: "https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/14k%20Yellow%20Gold%20Navaratna%20gemstone%20Ring%20-%2014k%20White%20Gold%20Wedding%20Band%20Ring%20-%20Natural%20Ruby%20Emerlad%20Gemstone%20Women%20Men's%20Ring%20-Minimalist%20ring.jpg",
     alt: "22K Gold Floral Ring - Traditional Design"
   },
   {
