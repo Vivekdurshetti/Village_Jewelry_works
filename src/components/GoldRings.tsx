@@ -9,21 +9,21 @@ import 'swiper/css/zoom';
 
 const ringImages = [
   {
+    url: 'https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/Wedding%20rings%20set%20for%20couple_%20palm%20leaf%20satin%20wedding%20band%20for%20him%2C%20Palmira%20ring%20set%20with%20natural%20green%20sapphire%20for%20her%20-%2014K%20rose%20gold%20_%20Lab%20grown%20diamonds.jpg',
+    alt: '22K Gold Floral Ring - Traditional Design',
+  },
+  {
+    url: 'https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/Intaglio%20Rings%2C%20Crystal%20Ring%2C%20Red%20Stone%20Ring%2C%20Ancient%20Ring%2C%20Carved%20Rings%2C%20art%20deco%20jewelry%2C%201920s%20jewelry%2C%20antique%20jewelry%2C%20vintage%20jewelry.jpg',
+    alt: 'Gold Engagement Ring for Women - Modern Collection',
+  },
+  {
+    url: 'https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/Gold%20ring%2C%20decorated%20with%20diamonds%2C%20lion%20head_.jpg',
+    alt: '24K Gold Wedding Ring Set - Luxury Collection',
+  },
+  {
     url: "https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/14k%20Yellow%20Gold%20Navaratna%20gemstone%20Ring%20-%2014k%20White%20Gold%20Wedding%20Band%20Ring%20-%20Natural%20Ruby%20Emerlad%20Gemstone%20Women%20Men's%20Ring%20-Minimalist%20ring.jpg",
-    alt: "22K Gold Floral Ring - Traditional Design"
+    alt: 'Traditional Gold Ring with Diamond - Premium Collection',
   },
-  {
-    url: "https://images.pexels.com/photos/10917094/pexels-photo-10917094.jpeg",
-    alt: "Gold Engagement Ring for Women - Modern Collection"
-  },
-  {
-    url: "https://images.pexels.com/photos/11034622/pexels-photo-11034622.jpeg",
-    alt: "24K Gold Wedding Ring Set - Luxury Collection"
-  },
-  {
-    url: "https://images.pexels.com/photos/9428795/pexels-photo-9428795.jpeg",
-    alt: "Traditional Gold Ring with Diamond - Premium Collection"
-  }
 ];
 
 const testimonials = [
@@ -58,7 +58,7 @@ const GoldRings: React.FC = () => {
       {/* Hero Section */}
       <div className="relative h-[60vh] overflow-hidden">
         <img
-          src="https://images.pexels.com/photos/9428799/pexels-photo-9428799.jpeg"
+          src="https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/ChatGPT%20Image%20Jun%204%2C%202025%2C%2004_46_10%20PM.png"
           alt="Luxury Gold Rings Collection"
           className="w-full h-full object-cover"
         />
