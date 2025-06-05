@@ -58,7 +58,7 @@ const GoldRings: React.FC = () => {
       {/* Hero Section */}
       <div className="relative h-[60vh] overflow-hidden">
         <img
-          src="https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/ring-5475926_1920.jpg"
+          src="https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/header-block.jpg"
           alt="Luxury Gold Rings Collection"
           className="w-full h-full object-cover"
         />
