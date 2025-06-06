@@ -54,7 +54,7 @@ const GoldRings: React.FC = () => {
           <img
             src="https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/header-block.jpg"
             alt="Luxury Gold Rings Collection"
-            className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+            className="w-full h-full object-cover opacity-80 mix-blend-overlay"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black-900/90 to-transparent">
