@@ -6,6 +6,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/zoom';
+import FeedbackList from './FeedbackList';
+
 
 const ringImages = [
   {
@@ -178,41 +180,22 @@ const GoldRings: React.FC = () => {
         </div>
 
         {/* Testimonials */}
-        <div>
-          <h3 className="text-2xl font-serif font-bold text-white mb-8 text-center">
-            Customer Testimonials
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-black-800/50 p-6 rounded-lg backdrop-blur-sm border border-gold-500/10">
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-5 h-5 ${
-                        i < testimonial.rating
-                          ? 'text-gold-500 fill-gold-500'
-                          : 'text-gray-400'
-                      }`}
-                    />
-                  ))}
-                </div>
-                <p className="text-white/90 italic mb-4">"{testimonial.comment}"</p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 rounded-full bg-gold-500 flex items-center justify-center text-black-900 font-serif font-bold">
-                      {testimonial.name[0]}
-                    </div>
-                    <div className="ml-3">
-                      <p className="text-white font-medium">{testimonial.name}</p>
-                      <p className="text-white/60 text-sm">{testimonial.date}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+        <section className="py-20 bg-black-900">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
+                What Our <span className="text-gold-500">Clients Say</span>
+              </h2>
+              <div className="w-20 h-1 bg-gold-500 mx-auto mb-8"></div>
+              <p className="text-white/80 text-lg">
+                Read what our valued customers have to say about their experience with us
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <FeedbackList />
+            </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );
