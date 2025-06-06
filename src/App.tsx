@@ -9,6 +9,7 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import GoldRings from './components/GoldRings';
+import ContactUs from "./components/ContactUs";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/gold-rings" element={<GoldRings />} />
+          <Route path="/ContactUs" element={<ContactUs />} />
           <Route path="/" element={
             <main>
               <Hero />
