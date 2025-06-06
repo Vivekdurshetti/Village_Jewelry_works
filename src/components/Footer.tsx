@@ -1,5 +1,5 @@
 import React from 'react';
-import { GemIcon, Facebook, Instagram, MessageCircle } from 'lucide-react';
+import { GemIcon, Facebook, Instagram, MessageCircle, MapPin, Phone, Mail} from 'lucide-react';
 
 const Footer: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -52,12 +52,48 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           
-          <div>
+          {/* <div>
             <h4 className="text-lg font-serif font-bold text-white mb-6">Contact</h4>
             <address className="not-italic text-white/70">
               <p className="mb-3">📍 Beside RCM shop, Basar Village, <br />Nirmal District, Telangana State</p>
               <p className="mb-3">📞 +91-9100432526</p>
               <p className="mb-3">✉️ info@villagejewellery.com</p>
+            </address>
+          </div> */}
+          <div>
+            <h4 className="text-lg font-serif font-bold text-white mb-6">Contact</h4>
+            <address className="not-italic text-white/70 space-y-4">
+              <p className="flex items-start mb-3">
+                <MapPin className="w-5 h-5 mr-2 text-gold-500 mt-1" />
+                <a
+                  href="https://www.google.com/maps?q=Beside+RCM+shop,+Basar+Village,+Nirmal+District,+Telangana+State"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gold-500 transition-colors"
+                >
+                  Beside RCM shop, Basar Village,
+                  <br />
+                  Nirmal District, Telangana State
+                </a>
+              </p>
+              <p className="flex items-center mb-3">
+                <Phone className="w-5 h-5 mr-2 text-gold-500" />
+                <a
+                  href="tel:+919100432526"
+                  className="hover:text-gold-500 transition-colors"
+                >
+                  +91-9100432526
+                </a>
+              </p>
+              <p className="flex items-center mb-3">
+                <Mail className="w-5 h-5 mr-2 text-gold-500" />
+                <a
+                  href="mailto: 8247394051vivek@gmail.com"
+                  className="hover:text-gold-500 transition-colors"
+                >
+                  8247394051vivek@gmail.com
+                </a>
+              </p>
             </address>
           </div>
           
