@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
               <p className="flex items-start mb-3">
                 <MapPin className="w-5 h-5 mr-2 text-gold-500 mt-1" />
                 <a
-                  href="https://www.google.com/maps?q=Beside+RCM+shop,+Basar+Village,+Nirmal+District,+Telangana+State"
+                  href="https://maps.app.goo.gl/FhBNtvxDxpXSWpLn8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-gold-500 transition-colors"
