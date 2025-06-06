@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Star } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import toast from 'react-hot-toast';
 
@@ -65,23 +64,30 @@ const FeedbackForm: React.FC = () => {
         />
       </div>
 
+      {/* Emoji Rating Section */}
       <div className="mb-6">
         <label className="block text-white/80 mb-2">Rating</label>
-        <div className="flex gap-1">
-          {[1, 2, 3, 4, 5].map((star) => (
+        <div className="flex items-center justify-between gap-2">
+          {[
+            { value: 1, emoji: "😨", label: "Worst" },
+            { value: 2, emoji: "😕", label: "Poor" },
+            { value: 3, emoji: "😐", label: "Average" },
+            { value: 4, emoji: "🙂", label: "Good" },
+            { value: 5, emoji: "😁", label: "Excellent" },
+          ].map((item) => (
             <button
-              key={star}
+              key={item.value}
               type="button"
-              onClick={() => setRating(star)}
-              className="focus:outline-none"
+              onClick={() => setRating(item.value)}
+              className={`flex flex-col items-center focus:outline-none 
+                ${rating === item.value ? "scale-110" : "opacity-60 hover:opacity-100"}
+                transition-transform`}
+              aria-label={item.label}
             >
-              <Star
-                className={`w-8 h-8 ${
-                  star <= rating
-                    ? 'text-gold-500 fill-gold-500'
-                    : 'text-gray-400'
-                } transition-colors`}
-              />
+              <span className="text-4xl">{item.emoji}</span>
+              <span className={`mt-2 text-xs ${rating === item.value ? "text-gold-500 font-bold" : "text-white/60"}`}>
+                {item.label}
+              </span>
             </button>
           ))}
         </div>

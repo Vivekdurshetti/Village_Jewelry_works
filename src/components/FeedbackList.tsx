@@ -105,9 +105,15 @@ const FeedbackList: React.FC = () => {
     <div className="space-y-8">
       {/* Latest Feedback */}
       {latestFeedback && (
+        // <div className="mb-12">
+        //   <h3 className="text-xl font-serif font-bold text-white mb-6">Latest Feedback</h3>
+        //   <FeedbackCard feedback={latestFeedback} isLatest={true} />
+        // </div>
         <div className="mb-12">
-          <h3 className="text-xl font-serif font-bold text-white mb-6">Latest Feedback</h3>
-          <FeedbackCard feedback={latestFeedback} isLatest={true} />
+          <div className="bg-black-800 p-6 rounded-lg shadow-lg">
+            <h3 className="text-xl font-serif font-bold text-white mb-6">Latest Feedback</h3>
+            <FeedbackCard feedback={latestFeedback} isLatest={true} />
+          </div>
         </div>
       )}
 
