@@ -45,40 +45,34 @@ const GoldRings: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState(0);
 
   return (
-    <div className="pt-20">
-      {/* SEO Meta Tags */}
-      <head>
-        <title>Buy Gold Rings Online – Elegant, Pure & Handcrafted | Basar Jewellery</title>
-        <meta
-          name="description"
-          content="Explore premium handcrafted gold rings online. Pure 22K/24K BIS Hallmarked jewelry with free shipping & easy returns. Shop now!"
-        />
-      </head>
-
+    <div className="pt-20 bg-gradient-to-b from-black-900 to-black-800">
       {/* Hero Section */}
       <div className="relative h-[60vh] overflow-hidden">
-        <img
-          src="https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/header-block.jpg"
-          alt="Luxury Gold Rings Collection"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-              Elegant Gold Rings for Every Occasion
-            </h1>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Timeless Designs, Artisan Craftsmanship, and Purity You Can Trust
-            </p>
+        <div className="absolute inset-0 bg-black-900 bg-opacity-80">
+          <img
+            src="https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/header-block.jpg"
+            alt="Luxury Gold Rings Collection"
+            className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black-900/90 to-transparent">
+          <div className="container mx-auto px-4 h-full flex items-center justify-center">
+            <div className="text-center max-w-4xl">
+              <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 drop-shadow-lg">
+                Elegant Gold Rings for Every <span className="text-gold-500">Occasion</span>
+              </h1>
+              <p className="text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
+                Timeless Designs, Artisan Craftsmanship, and Purity You Can Trust
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-16">
-        {/* Product Description */}
+        {/* Product Gallery and Description */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          {/* Product Gallery */}
-          <div>
+          <div className="bg-black-800 p-6 rounded-lg shadow-xl">
             <Swiper
               modules={[Navigation, Pagination, Zoom]}
               navigation
@@ -100,12 +94,11 @@ const GoldRings: React.FC = () => {
             </Swiper>
           </div>
 
-          {/* Product Info */}
-          <div>
+          <div className="bg-black-800 p-8 rounded-lg shadow-xl">
             <h2 className="text-3xl font-serif font-bold text-white mb-6">
               Handcrafted Gold Ring Collection
             </h2>
-            <p className="text-white/90 text-lg mb-8">
+            <p className="text-white/90 text-lg mb-8 leading-relaxed">
               Experience the perfect blend of traditional craftsmanship and contemporary design with our exclusive gold ring collection. Each piece is meticulously handcrafted by our master artisans using the finest 22K and 24K gold, ensuring unmatched quality and timeless beauty.
             </p>
 
@@ -128,7 +121,6 @@ const GoldRings: React.FC = () => {
               </div>
             </div>
 
-            {/* CTA Buttons */}
             <div className="space-y-4">
               <button className="w-full py-4 bg-gold-500 text-black-900 font-medium rounded-lg hover:bg-gold-600 transition-colors">
                 Shop Now
@@ -146,7 +138,7 @@ const GoldRings: React.FC = () => {
                 </a>
                 <a
                   href="tel:+919100432526"
-                  className="flex-1 py-3 bg-black-800 text-white font-medium rounded-lg hover:bg-black-700 transition-colors flex items-center justify-center gap-2"
+                  className="flex-1 py-3 bg-black-700 text-white font-medium rounded-lg hover:bg-black-600 transition-colors flex items-center justify-center gap-2"
                 >
                   <Phone className="w-5 h-5" />
                   Call Now
@@ -156,28 +148,28 @@ const GoldRings: React.FC = () => {
           </div>
         </div>
 
-        {/* Why Choose Us */}
+        {/* Features Section */}
         <div className="mb-16">
           <h3 className="text-2xl font-serif font-bold text-white mb-8 text-center">
             Trusted for Generations in Gold Craftsmanship
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-black-800 p-6 rounded-lg text-center">
+            <div className="bg-black-800/50 p-6 rounded-lg text-center backdrop-blur-sm border border-gold-500/10">
               <Truck className="w-8 h-8 text-gold-500 mx-auto mb-4" />
               <h4 className="font-medium text-white mb-2">Free Delivery</h4>
               <p className="text-white/70">Secure shipping nationwide</p>
             </div>
-            <div className="bg-black-800 p-6 rounded-lg text-center">
+            <div className="bg-black-800/50 p-6 rounded-lg text-center backdrop-blur-sm border border-gold-500/10">
               <Star className="w-8 h-8 text-gold-500 mx-auto mb-4" />
               <h4 className="font-medium text-white mb-2">Lifetime Polish</h4>
               <p className="text-white/70">Free polishing service</p>
             </div>
-            <div className="bg-black-800 p-6 rounded-lg text-center">
+            <div className="bg-black-800/50 p-6 rounded-lg text-center backdrop-blur-sm border border-gold-500/10">
               <RefreshCw className="w-8 h-8 text-gold-500 mx-auto mb-4" />
               <h4 className="font-medium text-white mb-2">Easy Returns</h4>
               <p className="text-white/70">15-day return policy</p>
             </div>
-            <div className="bg-black-800 p-6 rounded-lg text-center">
+            <div className="bg-black-800/50 p-6 rounded-lg text-center backdrop-blur-sm border border-gold-500/10">
               <Ruler className="w-8 h-8 text-gold-500 mx-auto mb-4" />
               <h4 className="font-medium text-white mb-2">Customization</h4>
               <p className="text-white/70">Personalized designs</p>
@@ -192,7 +184,7 @@ const GoldRings: React.FC = () => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-black-800 p-6 rounded-lg">
+              <div key={index} className="bg-black-800/50 p-6 rounded-lg backdrop-blur-sm border border-gold-500/10">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star
