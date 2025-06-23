@@ -146,7 +146,7 @@ const Header: React.FC = () => {
               onClick={() => scrollToSection('contact')}
               className="text-white hover:text-gold-500 transition-colors font-medium"
             >
-              Contact
+              Contact Us
             </button>
           </nav>
 
