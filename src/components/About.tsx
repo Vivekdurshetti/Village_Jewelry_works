@@ -14,7 +14,7 @@ const About: React.FC = () => {
       >
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
-            Your Local Artisans of <span className="text-gold-500">Precious Metalwork</span>
+            Your Local Artisans of <span className="text-gold-500">Precious Metalwork@</span>
           </h2>
           <div className="w-20 h-1 bg-gold-500 mx-auto mb-8"></div>
         </div>
