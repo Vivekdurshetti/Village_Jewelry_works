@@ -62,6 +62,14 @@ const Contact: React.FC = () => {
         form.current,
         'nslwnC_o_V0pC5m3d' // Replace with your EmailJS public key
       );
+      // ---- ADD THIS BLOCK FOR GTM FORM TRACKING ----
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'form_submit',
+        formType: 'contact', // Change if you want to distinguish forms
+        formData: { ...formData }
+      });
+      // ---- END GTM BLOCK ----
 
       setFormData({ name: '', email: '', phone: '', message: '' });
       alert('Thank you for your message! We will get back to you soon.');
