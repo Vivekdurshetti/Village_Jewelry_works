@@ -9,6 +9,14 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import GoldRings from './components/GoldRings';
+import WeddingRings from './components/WeddingRings';
+import EngagementRings from './components/EngagementRings';
+import GoldChains from './components/GoldChains';
+import Mangalsutra from './components/Mangalsutra';
+import PendantSets from './components/PendantSets';
+import GoldStuds from './components/GoldStuds';
+import Jhumkas from './components/Jhumkas';
+import Chandbali from './components/Chandbali';
 import ContactUs from "./components/ContactUs";
 
 // Add this helper component INSIDE App.tsx file
@@ -37,7 +45,22 @@ function App() {
       <div className="font-sans text-black-800">
         <Header />
         <Routes>
+          {/* Ring Routes */}
           <Route path="/gold-rings" element={<GoldRings />} />
+          <Route path="/wedding-rings" element={<WeddingRings />} />
+          <Route path="/engagement-rings" element={<EngagementRings />} />
+          
+          {/* Necklace Routes */}
+          <Route path="/gold-chains" element={<GoldChains />} />
+          <Route path="/mangalsutra" element={<Mangalsutra />} />
+          <Route path="/pendant-sets" element={<PendantSets />} />
+          
+          {/* Earring Routes */}
+          <Route path="/gold-studs" element={<GoldStuds />} />
+          <Route path="/jhumkas" element={<Jhumkas />} />
+          <Route path="/chandbali" element={<Chandbali />} />
+          
+          {/* Other Routes */}
           <Route path="/ContactUs" element={<ContactUs />} />
           <Route path="/" element={
             <main>
