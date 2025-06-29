@@ -10,19 +10,19 @@ import FeedbackList from './FeedbackList';
 
 const studImages = [
   {
-    url: 'https://images.pexels.com/photos/1232951/pexels-photo-1232951.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    url: 'https://github.com/Vivekdurshetti/Village_Jewelry_works/blob/main/src/media/Stud1.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     alt: 'Gold Stud Earrings - Classic Design',
   },
   {
-    url: 'https://images.pexels.com/photos/1232952/pexels-photo-1232952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    url: 'https://github.com/Vivekdurshetti/Village_Jewelry_works/blob/main/src/media/Stud2.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     alt: 'Diamond Gold Studs - Premium Collection',
   },
   {
-    url: 'https://images.pexels.com/photos/1232953/pexels-photo-1232953.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    url: 'https://github.com/Vivekdurshetti/Village_Jewelry_works/blob/main/src/media/Stud3.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     alt: 'Floral Gold Studs - Traditional Style',
   },
   {
-    url: 'https://images.pexels.com/photos/1232954/pexels-photo-1232954.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    url: 'https://github.com/Vivekdurshetti/Village_Jewelry_works/blob/main/src/media/Stud4.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     alt: 'Modern Gold Studs - Contemporary Collection',
   },
 ];
