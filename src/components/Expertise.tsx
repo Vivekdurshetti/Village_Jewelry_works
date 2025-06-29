@@ -16,7 +16,7 @@ const ProductCard: React.FC<{
   return (
     <div 
       ref={ref}
-      className={`group relative bg-black-800 rounded-lg overflow-hidden shadow-xl transition-all duration-700 transform hover:scale-105 hover:shadow-2xl ${
+      className={`group relative bg-black-800 rounded-lg overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl ${
         inView 
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 translate-y-10'
@@ -28,13 +28,13 @@ const ProductCard: React.FC<{
         <img 
           src={image} 
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black-900/90 via-black-900/50 to-transparent"></div>
         
         {/* Icon */}
         <div className="absolute top-4 right-4">
-          <div className="w-12 h-12 rounded-full bg-gold-500/20 backdrop-blur-sm flex items-center justify-center text-gold-500 border border-gold-500/30">
+          <div className="w-12 h-12 rounded-full bg-gold-500/20 backdrop-blur-sm flex items-center justify-center text-gold-500 border border-gold-500/30 transition-all duration-200 group-hover:bg-gold-500/30 group-hover:scale-110">
             {icon}
           </div>
         </div>
@@ -42,7 +42,7 @@ const ProductCard: React.FC<{
 
       {/* Content */}
       <div className="p-6">
-        <h3 className="text-xl font-serif font-bold text-white mb-3 group-hover:text-gold-500 transition-colors">
+        <h3 className="text-xl font-serif font-bold text-white mb-3 group-hover:text-gold-500 transition-colors duration-200">
           {title}
         </h3>
         <p className="text-white/80 text-sm mb-6 leading-relaxed">
@@ -52,15 +52,15 @@ const ProductCard: React.FC<{
         {/* CTA Button */}
         <RouterLink 
           to={link}
-          className="inline-flex items-center justify-center w-full py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-black-900 font-medium rounded-lg hover:from-gold-600 hover:to-gold-700 transition-all duration-300 transform hover:translate-y-[-2px] hover:shadow-lg group"
+          className="inline-flex items-center justify-center w-full py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-black-900 font-medium rounded-lg hover:from-gold-600 hover:to-gold-700 transition-all duration-200 transform hover:translate-y-[-2px] hover:shadow-lg group"
         >
           <span>Know More</span>
-          <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+          <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" />
         </RouterLink>
       </div>
 
       {/* Hover Overlay Effect */}
-      <div className="absolute inset-0 bg-gradient-to-t from-gold-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-gold-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"></div>
     </div>
   );
 };
@@ -139,7 +139,7 @@ const Expertise: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div 
           ref={ref}
-          className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-1000 ${
+          className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-500 ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -161,7 +161,7 @@ const Expertise: React.FC = () => {
               image={product.image}
               icon={product.icon}
               link={product.link}
-              delay={index * 100}
+              delay={index * 50}
             />
           ))}
         </div>
@@ -178,7 +178,7 @@ const Expertise: React.FC = () => {
               </p>
               <RouterLink 
                 to="/ContactUs"
-                className="inline-flex items-center px-6 py-3 bg-gold-500 text-black-900 font-medium rounded-lg hover:bg-gold-600 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-gold-500 text-black-900 font-medium rounded-lg hover:bg-gold-600 transition-colors duration-200"
               >
                 Contact Us for Custom Design
                 <ArrowRight className="w-4 h-4 ml-2" />
