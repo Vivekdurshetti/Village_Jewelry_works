@@ -69,11 +69,11 @@ const FeedbackForm: React.FC = () => {
         <label className="block text-white/80 mb-2">Rating</label>
         <div className="flex items-center justify-between gap-2">
           {[
-            { value: 1, emoji: "😨", label: "Worst" },
-            { value: 2, emoji: "😕", label: "Poor" },
-            { value: 3, emoji: "😐", label: "Average" },
-            { value: 4, emoji: "🙂", label: "Good" },
             { value: 5, emoji: "😁", label: "Excellent" },
+            { value: 4, emoji: "🙂", label: "Good" },
+            { value: 3, emoji: "😐", label: "Average" },
+            { value: 2, emoji: "😕", label: "Poor" },
+            { value: 1, emoji: "😨", label: "Worst" },
           ].map((item) => (
             <button
               key={item.value}
