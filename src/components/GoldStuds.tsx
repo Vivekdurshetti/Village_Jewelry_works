@@ -36,7 +36,7 @@ const GoldStuds: React.FC = () => {
       <div className="relative h-[60vh] overflow-hidden">
         <div className="absolute inset-0 bg-black-900 bg-opacity-80">
           <img
-            src="https://images.pexels.com/photos/1232951/pexels-photo-1232951.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/Stud%20header.jpg?auto=compress&cs=tinysrgb&w=1600"
             alt="Gold Studs Collection"
             className="w-full h-full object-cover opacity-80"
           />
