@@ -11,19 +11,19 @@ import FeedbackList from './FeedbackList';
 
 const ringImages = [
   {
-    url: 'https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/Wedding%20rings%20set%20for%20couple_%20palm%20leaf%20satin%20wedding%20band%20for%20him%2C%20Palmira%20ring%20set%20with%20natural%20green%20sapphire%20for%20her%20-%2014K%20rose%20gold%20_%20Lab%20grown%20diamonds.jpg',
+    url: 'https://images.pexels.com/photos/1232935/pexels-photo-1232935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     alt: '22K Gold Floral Ring - Traditional Design',
   },
   {
-    url: 'https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/Intaglio%20Rings%2C%20Crystal%20Ring%2C%20Red%20Stone%20Ring%2C%20Ancient%20Ring%2C%20Carved%20Rings%2C%20art%20deco%20jewelry%2C%201920s%20jewelry%2C%20antique%20jewelry%2C%20vintage%20jewelry.jpg',
+    url: 'https://images.pexels.com/photos/1232936/pexels-photo-1232936.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     alt: 'Gold Engagement Ring for Women - Modern Collection',
   },
   {
-    url: 'https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/Gold%20ring%2C%20decorated%20with%20diamonds%2C%20lion%20head_.jpg',
+    url: 'https://images.pexels.com/photos/1232937/pexels-photo-1232937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     alt: '24K Gold Wedding Ring Set - Luxury Collection',
   },
   {
-    url: "https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/14k%20Yellow%20Gold%20Navaratna%20gemstone%20Ring%20-%2014k%20White%20Gold%20Wedding%20Band%20Ring%20-%20Natural%20Ruby%20Emerlad%20Gemstone%20Women%20Men's%20Ring%20-Minimalist%20ring.jpg",
+    url: 'https://images.pexels.com/photos/1232938/pexels-photo-1232938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     alt: 'Traditional Gold Ring with Diamond - Premium Collection',
   },
 ];
@@ -52,7 +52,7 @@ const GoldRings: React.FC = () => {
       <div className="relative h-[60vh] overflow-hidden">
         <div className="absolute inset-0 bg-black-900 bg-opacity-80">
           <img
-            src="https://raw.githubusercontent.com/Vivekdurshetti/Village_Jewelry_works/refs/heads/main/src/media/header-block.jpg"
+            src="https://images.pexels.com/photos/1232935/pexels-photo-1232935.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt="Luxury Gold Rings Collection"
             className="w-full h-full object-cover opacity-80"
           />
