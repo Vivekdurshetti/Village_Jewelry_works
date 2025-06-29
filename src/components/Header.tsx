@@ -142,12 +142,12 @@ const Header: React.FC = () => {
             >
               Testimonials
             </button>
-            <button
-              onClick={() => scrollToSection('contact')}
+            <Link
+              to="/ContactUs"
               className="text-white hover:text-gold-500 transition-colors font-medium"
             >
               Contact Us
-            </button>
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -213,7 +213,7 @@ const Header: React.FC = () => {
                 )}
               </li>
               
-              {['about', 'services', 'testimonials', 'contact'].map((item) => (
+              {['about', 'services', 'testimonials'].map((item) => (
                 <li key={item}>
                   <button
                     onClick={() => scrollToSection(item)}
@@ -223,6 +223,16 @@ const Header: React.FC = () => {
                   </button>
                 </li>
               ))}
+              
+              <li>
+                <Link
+                  to="/ContactUs"
+                  className="text-white hover:text-gold-500 transition-colors font-medium text-lg block py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>
