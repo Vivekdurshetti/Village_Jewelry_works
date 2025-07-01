@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { MapPin, Phone, MessageCircle, Mail, Clock } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ContactUs: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ const ContactUs: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useRef<HTMLFormElement>(null);
+  const { t } = useLanguage();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -63,10 +65,10 @@ const ContactUs: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black-900/90 to-transparent flex items-center justify-center">
           <div className="text-center max-w-2xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4 drop-shadow-lg">
-              Get in <span className="text-gold-500">Touch</span>
+              {t('contact.title')} <span className="text-gold-500">{t('contact.titleHighlight')}</span>
             </h1>
             <p className="text-lg text-white/90 drop-shadow-md">
-              We would love to hear from you. Reach out to us for any queries, orders, or feedback.
+              {t('contact.subtitle')}
             </p>
           </div>
         </div>
@@ -97,7 +99,7 @@ const ContactUs: React.FC = () => {
         {/* Contact Details & Form */}
         <div className="bg-black-800 p-8 rounded-lg shadow-xl flex flex-col justify-between">
           <div>
-            <h2 className="text-2xl font-serif font-bold text-white mb-6">Get In Touch</h2>
+            <h2 className="text-2xl font-serif font-bold text-white mb-6">{t('contact.title')} {t('contact.titleHighlight')}</h2>
             <div className="mb-8 space-y-6">
               {/* Address */}
               <div className="flex items-start">
@@ -107,7 +109,7 @@ const ContactUs: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-white font-medium mb-1">Address</h3>
+                  <h3 className="text-white font-medium mb-1">{t('contact.address')}</h3>
                   <div className="text-white/70">
                     <a
                       href="https://maps.app.goo.gl/FhBNtvxDxpXSWpLn8"
@@ -130,7 +132,7 @@ const ContactUs: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-white font-medium mb-1">Phone</h3>
+                  <h3 className="text-white font-medium mb-1">{t('contact.phone')}</h3>
                   <div className="text-white/70">
                     <a
                       href="tel:+919100432526"
@@ -150,7 +152,7 @@ const ContactUs: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-white font-medium mb-1">Email</h3>
+                  <h3 className="text-white font-medium mb-1">{t('contact.email')}</h3>
                   <div className="text-white/70">
                     <a
                       href="mailto:8247394051vivek@gmail.com"
@@ -170,7 +172,7 @@ const ContactUs: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-white font-medium mb-1">WhatsApp</h3>
+                  <h3 className="text-white font-medium mb-1">{t('common.whatsapp')}</h3>
                   <div className="text-white/70">
                     <a
                       href="https://wa.me/919100432526"
@@ -192,8 +194,8 @@ const ContactUs: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-white font-medium mb-1">Business Hours</h3>
-                  <div className="text-white/70">Mon–Sat: 10 AM–6 PM | Sun: Closed</div>
+                  <h3 className="text-white font-medium mb-1">{t('contact.hours')}</h3>
+                  <div className="text-white/70">{t('contact.hoursValue')}</div>
                 </div>
               </div>
             </div>
@@ -201,10 +203,10 @@ const ContactUs: React.FC = () => {
 
           {/* Contact Form */}
           <form ref={form} onSubmit={handleSubmit} className="space-y-6">
-            <h3 className="text-xl font-serif font-bold text-white mb-6">Send us a Message</h3>
+            <h3 className="text-xl font-serif font-bold text-white mb-6">{t('contact.formTitle')}</h3>
             
             <div>
-              <label htmlFor="name" className="block text-white/80 mb-2">Full Name</label>
+              <label htmlFor="name" className="block text-white/80 mb-2">{t('contact.name')}</label>
               <input
                 type="text"
                 id="name"
@@ -213,13 +215,13 @@ const ContactUs: React.FC = () => {
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 bg-black-700 border border-black-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 text-white"
-                placeholder="Your name"
+                placeholder={t('contact.namePlaceholder')}
               />
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="email" className="block text-white/80 mb-2">Email</label>
+                <label htmlFor="email" className="block text-white/80 mb-2">{t('contact.email')}</label>
                 <input
                   type="email"
                   id="email"
@@ -228,11 +230,11 @@ const ContactUs: React.FC = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-black-700 border border-black-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 text-white"
-                  placeholder="Your email"
+                  placeholder={t('contact.emailPlaceholder')}
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-white/80 mb-2">Phone</label>
+                <label htmlFor="phone" className="block text-white/80 mb-2">{t('contact.phone')}</label>
                 <input
                   type="tel"
                   id="phone"
@@ -240,13 +242,13 @@ const ContactUs: React.FC = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-black-700 border border-black-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 text-white"
-                  placeholder="Your phone (optional)"
+                  placeholder={t('contact.phonePlaceholder')}
                 />
               </div>
             </div>
             
             <div>
-              <label htmlFor="message" className="block text-white/80 mb-2">Message</label>
+              <label htmlFor="message" className="block text-white/80 mb-2">{t('contact.message')}</label>
               <textarea
                 id="message"
                 name="message"
@@ -255,7 +257,7 @@ const ContactUs: React.FC = () => {
                 required
                 rows={4}
                 className="w-full px-4 py-3 bg-black-700 border border-black-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 text-white resize-none"
-                placeholder="Tell us how we can help you..."
+                placeholder={t('contact.messagePlaceholder')}
               ></textarea>
             </div>
             
@@ -268,7 +270,7 @@ const ContactUs: React.FC = () => {
                   : 'hover:bg-gold-600'
               }`}
             >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
+              {isSubmitting ? t('contact.sending') : t('contact.send')}
             </button>
           </form>
         </div>

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { GemIcon, Menu, X, ChevronDown } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const { t } = useLanguage();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -42,27 +45,27 @@ const Header: React.FC = () => {
 
   const productCategories = [
     {
-      title: 'Rings',
+      title: t('nav.rings'),
       items: [
-        { name: 'Gold Rings', path: '/gold-rings' },
-        { name: 'Wedding Rings', path: '/wedding-rings' },
-        { name: 'Engagement Rings', path: '/engagement-rings' },
+        { name: t('nav.goldRings'), path: '/gold-rings' },
+        { name: t('nav.weddingRings'), path: '/wedding-rings' },
+        { name: t('nav.engagementRings'), path: '/engagement-rings' },
       ]
     },
     {
-      title: 'Necklaces',
+      title: t('nav.necklaces'),
       items: [
-        { name: 'Gold Chains', path: '/gold-chains' },
-        { name: 'Mangalsutra', path: '/mangalsutra' },
-        { name: 'Pendant Sets', path: '/pendant-sets' },
+        { name: t('nav.goldChains'), path: '/gold-chains' },
+        { name: t('nav.mangalsutra'), path: '/mangalsutra' },
+        { name: t('nav.pendantSets'), path: '/pendant-sets' },
       ]
     },
     {
-      title: 'Earrings',
+      title: t('nav.earrings'),
       items: [
-        { name: 'Gold Studs', path: '/gold-studs' },
-        { name: 'Jhumkas', path: '/jhumkas' },
-        { name: 'Chandbali', path: '/chandbali' },
+        { name: t('nav.goldStuds'), path: '/gold-studs' },
+        { name: t('nav.jhumkas'), path: '/jhumkas' },
+        { name: t('nav.chandbali'), path: '/chandbali' },
       ]
     }
   ];
@@ -87,7 +90,7 @@ const Header: React.FC = () => {
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-white hover:text-gold-500 transition-colors font-medium">
-              Home
+              {t('nav.home')}
             </Link>
             
             {/* Products Mega Menu Trigger */}
@@ -96,7 +99,7 @@ const Header: React.FC = () => {
                 onClick={() => setIsProductsOpen(!isProductsOpen)}
                 className="flex items-center text-white hover:text-gold-500 transition-colors font-medium"
               >
-                Products
+                {t('nav.products')}
                 <ChevronDown className="w-4 h-4 ml-1" />
               </button>
               
@@ -128,40 +131,46 @@ const Header: React.FC = () => {
               onClick={() => scrollToSection('about')}
               className="text-white hover:text-gold-500 transition-colors font-medium"
             >
-              About
+              {t('nav.about')}
             </button>
             <button
               onClick={() => scrollToSection('services')}
               className="text-white hover:text-gold-500 transition-colors font-medium"
             >
-              Services
+              {t('nav.services')}
             </button>
             <button
               onClick={() => scrollToSection('testimonials')}
               className="text-white hover:text-gold-500 transition-colors font-medium"
             >
-              Testimonials
+              {t('nav.testimonials')}
             </button>
             <Link
               to="/ContactUs"
               className="text-white hover:text-gold-500 transition-colors font-medium"
             >
-              Contact Us
+              {t('nav.contact')}
             </Link>
+            
+            {/* Language Switcher */}
+            <LanguageSwitcher />
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMenu}
-            className="md:hidden text-white focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
+          {/* Mobile Menu Button and Language Switcher */}
+          <div className="md:hidden flex items-center space-x-3">
+            <LanguageSwitcher />
+            <button
+              onClick={toggleMenu}
+              className="text-white focus:outline-none"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -176,7 +185,7 @@ const Header: React.FC = () => {
                   className="text-white hover:text-gold-500 transition-colors font-medium text-lg block py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Home
+                  {t('nav.home')}
                 </Link>
               </li>
               
@@ -186,7 +195,7 @@ const Header: React.FC = () => {
                   onClick={() => setIsProductsOpen(!isProductsOpen)}
                   className="flex items-center justify-between w-full text-white hover:text-gold-500 transition-colors font-medium text-lg py-2"
                 >
-                  Products
+                  {t('nav.products')}
                   <ChevronDown className={`w-4 h-4 transition-transform ${isProductsOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isProductsOpen && (
@@ -219,7 +228,7 @@ const Header: React.FC = () => {
                     onClick={() => scrollToSection(item)}
                     className="text-white hover:text-gold-500 transition-colors font-medium text-lg w-full text-left py-2 capitalize"
                   >
-                    {item}
+                    {t(`nav.${item}`)}
                   </button>
                 </li>
               ))}
@@ -230,7 +239,7 @@ const Header: React.FC = () => {
                   className="text-white hover:text-gold-500 transition-colors font-medium text-lg block py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Contact Us
+                  {t('nav.contact')}
                 </Link>
               </li>
             </ul>

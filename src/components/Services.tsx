@@ -1,6 +1,7 @@
 import React from 'react';
 import { useInView } from '../hooks/useInView';
 import { Palette, Settings, BellRing as Ring } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ServiceCard: React.FC<{
   title: string;
@@ -40,33 +41,34 @@ const ServiceCard: React.FC<{
 
 const Services: React.FC = () => {
   const { ref, inView } = useInView({ threshold: 0.1 });
+  const { t } = useLanguage();
   
   const services = [
     {
-      title: "Custom Gold & Silver Ornaments",
+      title: t('services.custom.title'),
       icon: <Palette className="w-8 h-8" />,
       description: [
-        "Bespoke necklaces, bracelets, pendants and more",
-        "Wide range of karat options and finishes",
-        "CAD-backed design previews and gemstone setting"
+        t('services.custom.desc1'),
+        t('services.custom.desc2'),
+        t('services.custom.desc3')
       ]
     },
     {
-      title: "Repair & Restoration",
+      title: t('services.repair.title'),
       icon: <Settings className="w-8 h-8" />,
       description: [
-        "Ring resizing, clasp replacement, soldering",
-        "Polishing, rhodium plating, and stone re-setting",
-        "Fast turnaround with quality guarantees"
+        t('services.repair.desc1'),
+        t('services.repair.desc2'),
+        t('services.repair.desc3')
       ]
     },
     {
-      title: "Ear & Hand Ring Making",
+      title: t('services.making.title'),
       icon: <Ring className="w-8 h-8" />,
       description: [
-        "Precision crafting of earrings and hand rings",
-        "Intricate filigree, traditional temple work, modern styles",
-        "Personalized fitting and design consultation"
+        t('services.making.desc1'),
+        t('services.making.desc2'),
+        t('services.making.desc3')
       ]
     }
   ];
@@ -81,11 +83,11 @@ const Services: React.FC = () => {
           }`}
         >
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
-            Our <span className="text-gold-500">Services</span>
+            {t('services.title')} <span className="text-gold-500">{t('services.titleHighlight')}</span>
           </h2>
           <div className="w-20 h-1 bg-gold-500 mx-auto mb-8"></div>
           <p className="text-white/80 text-lg">
-            Discover our range of premium jewelry services, crafted with precision and care
+            {t('services.subtitle')}
           </p>
         </div>
 

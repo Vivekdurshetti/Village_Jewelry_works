@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/zoom';
 import FeedbackList from './FeedbackList';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ringImages = [
   {
@@ -29,6 +30,7 @@ const ringImages = [
 
 const WeddingRings: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState(0);
+  const { t } = useLanguage();
 
   return (
     <div className="pt-20 bg-gradient-to-b from-black-900 to-black-800">
@@ -45,10 +47,10 @@ const WeddingRings: React.FC = () => {
           <div className="container mx-auto px-4 h-full flex items-center justify-center">
             <div className="text-center max-w-4xl">
               <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 drop-shadow-lg">
-                Wedding Rings for Your <span className="text-gold-500">Special Day</span>
+                {t('products.weddingRings.title')} <span className="text-gold-500">{t('products.weddingRings.titleHighlight')}</span>
               </h1>
               <p className="text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
-                Symbol of Eternal Love, Crafted with Perfection
+                {t('products.weddingRings.subtitle')}
               </p>
             </div>
           </div>
@@ -82,38 +84,38 @@ const WeddingRings: React.FC = () => {
 
           <div className="bg-black-800 p-8 rounded-lg shadow-xl">
             <h2 className="text-3xl font-serif font-bold text-white mb-6">
-              Wedding Ring Collection
+              {t('nav.weddingRings')} Collection
             </h2>
             <p className="text-white/90 text-lg mb-8 leading-relaxed">
-              Celebrate your eternal bond with our exquisite wedding ring collection. Each ring is crafted to symbolize your unique love story, featuring traditional and contemporary designs that will be treasured for generations.
+              {t('products.weddingRings.description')}
             </p>
 
             <div className="space-y-4 mb-8">
               <div className="flex items-center text-white/90">
                 <Heart className="w-5 h-5 text-gold-500 mr-3" />
-                Matching His & Hers Sets Available
+                {t('products.weddingRings.features.matching')}
               </div>
               <div className="flex items-center text-white/90">
                 <span className="w-2 h-2 bg-gold-500 rounded-full mr-3"></span>
-                18K, 22K & 24K Gold Options
+                {t('products.weddingRings.features.gold')}
               </div>
               <div className="flex items-center text-white/90">
                 <span className="w-2 h-2 bg-gold-500 rounded-full mr-3"></span>
-                Diamond & Gemstone Settings
+                {t('products.weddingRings.features.diamonds')}
               </div>
               <div className="flex items-center text-white/90">
                 <span className="w-2 h-2 bg-gold-500 rounded-full mr-3"></span>
-                Custom Engraving Services
+                {t('products.weddingRings.features.engraving')}
               </div>
               <div className="flex items-center text-white/90">
                 <span className="w-2 h-2 bg-gold-500 rounded-full mr-3"></span>
-                Lifetime Warranty & Maintenance
+                {t('products.weddingRings.features.warranty')}
               </div>
             </div>
 
             <div className="space-y-4">
               <button className="w-full py-4 bg-gold-500 text-black-900 font-medium rounded-lg hover:bg-gold-600 transition-colors">
-                View Wedding Collection
+                {t('common.viewCollection')}
               </button>
               <button className="w-full py-4 border-2 border-gold-500 text-gold-500 font-medium rounded-lg hover:bg-gold-500 hover:text-black-900 transition-colors">
                 Schedule Consultation
@@ -124,14 +126,14 @@ const WeddingRings: React.FC = () => {
                   className="flex-1 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  WhatsApp
+                  {t('common.whatsapp')}
                 </a>
                 <a
                   href="tel:+919100432526"
                   className="flex-1 py-3 bg-black-700 text-white font-medium rounded-lg hover:bg-black-600 transition-colors flex items-center justify-center gap-2"
                 >
                   <Phone className="w-5 h-5" />
-                  Call Now
+                  {t('common.callNow')}
                 </a>
               </div>
             </div>
@@ -151,12 +153,12 @@ const WeddingRings: React.FC = () => {
             </div>
             <div className="bg-black-800/50 p-6 rounded-lg text-center backdrop-blur-sm border border-gold-500/10">
               <Star className="w-8 h-8 text-gold-500 mx-auto mb-4" />
-              <h4 className="font-medium text-white mb-2">Premium Quality</h4>
+              <h4 className="font-medium text-white mb-2">{t('common.premiumQuality')}</h4>
               <p className="text-white/70">BIS hallmarked gold</p>
             </div>
             <div className="bg-black-800/50 p-6 rounded-lg text-center backdrop-blur-sm border border-gold-500/10">
               <Ruler className="w-8 h-8 text-gold-500 mx-auto mb-4" />
-              <h4 className="font-medium text-white mb-2">Perfect Fit</h4>
+              <h4 className="font-medium text-white mb-2">{t('common.perfectFit')}</h4>
               <p className="text-white/70">Professional sizing</p>
             </div>
             <div className="bg-black-800/50 p-6 rounded-lg text-center backdrop-blur-sm border border-gold-500/10">

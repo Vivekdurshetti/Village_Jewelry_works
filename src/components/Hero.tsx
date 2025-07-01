@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setIsVisible(true);
@@ -35,18 +37,18 @@ const Hero: React.FC = () => {
         }`}
       >
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 leading-tight">
-          Handcrafted Gold & Silver Jewellery in <span className="text-gold-500">Basara</span>
+          {t('hero.title')} <span className="text-gold-500">{t('hero.location')}</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-white/90 mb-8 font-light">
-          Crafting Timeless Beauty, One Ornament at a Time
+          {t('hero.subtitle')}
         </p>
         
         <button 
           onClick={scrollToServices}
           className="px-8 py-3 bg-green-600 text-white font-medium rounded hover:bg-green-700 transition-all transform hover:scale-105 shadow-lg"
         >
-          Explore Our Collection
+          {t('hero.cta')}
         </button>
       </div>
 

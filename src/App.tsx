@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { LanguageProvider } from './contexts/LanguageContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -40,42 +41,44 @@ function GoogleAnalyticsTracker() {
 
 function App() {
   return (
-    <Router>
-      <GoogleAnalyticsTracker />
-      <div className="font-sans text-black-800">
-        <Header />
-        <Routes>
-          {/* Ring Routes */}
-          <Route path="/gold-rings" element={<GoldRings />} />
-          <Route path="/wedding-rings" element={<WeddingRings />} />
-          <Route path="/engagement-rings" element={<EngagementRings />} />
-          
-          {/* Necklace Routes */}
-          <Route path="/gold-chains" element={<GoldChains />} />
-          <Route path="/mangalsutra" element={<Mangalsutra />} />
-          <Route path="/pendant-sets" element={<PendantSets />} />
-          
-          {/* Earring Routes */}
-          <Route path="/gold-studs" element={<GoldStuds />} />
-          <Route path="/jhumkas" element={<Jhumkas />} />
-          <Route path="/chandbali" element={<Chandbali />} />
-          
-          {/* Other Routes */}
-          <Route path="/ContactUs" element={<ContactUs />} />
-          <Route path="/" element={
-            <main>
-              <Hero />
-              <About />
-              <Services />
-              <Expertise />
-              <Testimonials />
-              <Contact />
-            </main>
-          } />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <GoogleAnalyticsTracker />
+        <div className="font-sans text-black-800">
+          <Header />
+          <Routes>
+            {/* Ring Routes */}
+            <Route path="/gold-rings" element={<GoldRings />} />
+            <Route path="/wedding-rings" element={<WeddingRings />} />
+            <Route path="/engagement-rings" element={<EngagementRings />} />
+            
+            {/* Necklace Routes */}
+            <Route path="/gold-chains" element={<GoldChains />} />
+            <Route path="/mangalsutra" element={<Mangalsutra />} />
+            <Route path="/pendant-sets" element={<PendantSets />} />
+            
+            {/* Earring Routes */}
+            <Route path="/gold-studs" element={<GoldStuds />} />
+            <Route path="/jhumkas" element={<Jhumkas />} />
+            <Route path="/chandbali" element={<Chandbali />} />
+            
+            {/* Other Routes */}
+            <Route path="/ContactUs" element={<ContactUs />} />
+            <Route path="/" element={
+              <main>
+                <Hero />
+                <About />
+                <Services />
+                <Expertise />
+                <Testimonials />
+                <Contact />
+              </main>
+            } />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </LanguageProvider>
   );
 }
 

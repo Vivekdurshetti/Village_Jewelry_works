@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { useInView } from '../hooks/useInView';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const About: React.FC = () => {
   const { ref, inView } = useInView({ threshold: 0.2 });
+  const { t } = useLanguage();
 
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-black-800 to-black-900">
@@ -14,7 +16,7 @@ const About: React.FC = () => {
       >
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
-            Your Local Artisans of <span className="text-gold-500">Precious Metalwork@</span>
+            {t('about.title')} <span className="text-gold-500">{t('about.titleHighlight')}</span>
           </h2>
           <div className="w-20 h-1 bg-gold-500 mx-auto mb-8"></div>
         </div>
@@ -35,19 +37,19 @@ const About: React.FC = () => {
           
           <div className="md:w-1/2">
             <p className="text-white/90 text-lg leading-relaxed mb-6">
-              Located in Basara Village, we are a family-run jewelry a rtelier specializing in exquisite gold and silver pieces. With over 20 years of combined experience, our crafts men blend traditional techniques with contemporary design—ensuring every ornament tells your unique story.
+              {t('about.description1')}
             </p>
             <p className="text-white/90 text-lg leading-relaxed mb-8">
-              From elegant bridal sets to everyday keepsakes, quality and trust are the cornerstones of our business. Each piece is meticulously handcrafted with attention to detail that honors both the materials and the artisanal tradition.
+              {t('about.description2')}
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="bg-black-800 border border-gold-500/30 px-6 py-4 rounded-lg">
-                <h3 className="text-gold-500 font-serif text-xl mb-1">Quality Materials</h3>
-                <p className="text-white/70">Premium gold and silver sourced ethically</p>
+                <h3 className="text-gold-500 font-serif text-xl mb-1">{t('about.qualityTitle')}</h3>
+                <p className="text-white/70">{t('about.qualityDesc')}</p>
               </div>
               <div className="bg-black-800 border border-gold-500/30 px-6 py-4 rounded-lg">
-                <h3 className="text-gold-500 font-serif text-xl mb-1">Family Legacy</h3>
-                <p className="text-white/70">Three generations of jewelry artisans</p>
+                <h3 className="text-gold-500 font-serif text-xl mb-1">{t('about.legacyTitle')}</h3>
+                <p className="text-white/70">{t('about.legacyDesc')}</p>
               </div>
             </div>
           </div>

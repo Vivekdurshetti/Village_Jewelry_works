@@ -2,6 +2,7 @@ import React from 'react';
 import { useInView } from '../hooks/useInView';
 import { ArrowRight, Sparkles, Heart, Crown, Link, Gem, Moon } from 'lucide-react';
 import { Link as RouterLink } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ProductCard: React.FC<{
   title: string;
@@ -12,6 +13,7 @@ const ProductCard: React.FC<{
   delay: number;
 }> = ({ title, description, image, icon, link, delay }) => {
   const { ref, inView } = useInView({ threshold: 0.1 });
+  const { t } = useLanguage();
 
   return (
     <div 
@@ -54,7 +56,7 @@ const ProductCard: React.FC<{
           to={link}
           className="inline-flex items-center justify-center w-full py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-black-900 font-medium rounded-lg hover:from-gold-600 hover:to-gold-700 transition-all duration-200 transform hover:translate-y-[-2px] hover:shadow-lg group"
         >
-          <span>Know More</span>
+          <span>{t('expertise.knowMore')}</span>
           <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" />
         </RouterLink>
       </div>
@@ -67,66 +69,67 @@ const ProductCard: React.FC<{
 
 const Expertise: React.FC = () => {
   const { ref, inView } = useInView({ threshold: 0.1 });
+  const { t } = useLanguage();
   
   const products = [
     {
-      title: "Gold Rings",
+      title: t('nav.goldRings'),
       description: "Exquisite handcrafted gold rings in 22K & 24K purity. From traditional designs to modern styles, each ring is a masterpiece of artisan craftsmanship.",
       image: "https://images.pexels.com/photos/1232935/pexels-photo-1232935.jpeg?auto=compress&cs=tinysrgb&w=800",
       icon: <Sparkles className="w-6 h-6" />,
       link: "/gold-rings"
     },
     {
-      title: "Wedding Rings",
+      title: t('nav.weddingRings'),
       description: "Symbol of eternal love crafted with perfection. Matching his & hers sets with custom engraving and lifetime warranty for your special day.",
       image: "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=800",
       icon: <Heart className="w-6 h-6" />,
       link: "/wedding-rings"
     },
     {
-      title: "Engagement Rings",
+      title: t('nav.engagementRings'),
       description: "Begin your forever with a ring as unique as your love. Featuring certified diamonds and custom designs for the perfect proposal.",
       image: "https://images.pexels.com/photos/1232935/pexels-photo-1232935.jpeg?auto=compress&cs=tinysrgb&w=800",
       icon: <Gem className="w-6 h-6" />,
       link: "/engagement-rings"
     },
     {
-      title: "Gold Chains",
+      title: t('nav.goldChains'),
       description: "Timeless elegance in every link. Premium gold chains in various styles - rope, box, figaro & cable chains with BIS hallmarked quality.",
       image: "https://images.pexels.com/photos/1232939/pexels-photo-1232939.jpeg?auto=compress&cs=tinysrgb&w=800",
       icon: <Link className="w-6 h-6" />,
       link: "/gold-chains"
     },
     {
-      title: "Mangalsutra",
+      title: t('nav.mangalsutra'),
       description: "Sacred symbol of marital bliss crafted with devotion. Traditional & modern designs in 22K & 24K gold with black beads and diamond settings.",
       image: "https://images.pexels.com/photos/1232943/pexels-photo-1232943.jpeg?auto=compress&cs=tinysrgb&w=800",
       icon: <Heart className="w-6 h-6" />,
       link: "/mangalsutra"
     },
     {
-      title: "Pendant Sets",
+      title: t('nav.pendantSets'),
       description: "Complete your look with matching elegance. Beautiful pendant and earring sets featuring temple, floral & modern designs with gemstone accents.",
       image: "https://images.pexels.com/photos/1232947/pexels-photo-1232947.jpeg?auto=compress&cs=tinysrgb&w=800",
       icon: <Gem className="w-6 h-6" />,
       link: "/pendant-sets"
     },
     {
-      title: "Gold Studs",
+      title: t('nav.goldStuds'),
       description: "Perfect for daily elegance. Comfortable gold stud earrings with diamond & gemstone accents, hypoallergenic materials and secure closures.",
       image: "https://images.pexels.com/photos/1232951/pexels-photo-1232951.jpeg?auto=compress&cs=tinysrgb&w=800",
       icon: <Sparkles className="w-6 h-6" />,
       link: "/gold-studs"
     },
     {
-      title: "Jhumkas",
+      title: t('nav.jhumkas'),
       description: "Celebrate heritage with every swing. Traditional jhumkas with temple designs, pearl & kundan accents, lightweight and comfortable for all occasions.",
       image: "https://images.pexels.com/photos/1232955/pexels-photo-1232955.jpeg?auto=compress&cs=tinysrgb&w=800",
       icon: <Crown className="w-6 h-6" />,
       link: "/jhumkas"
     },
     {
-      title: "Chandbali",
+      title: t('nav.chandbali'),
       description: "Royal elegance in crescent moon beauty. Traditional chandbali earrings with intricate designs, kundan work and pearl drops for festive occasions.",
       image: "https://images.pexels.com/photos/1232959/pexels-photo-1232959.jpeg?auto=compress&cs=tinysrgb&w=800",
       icon: <Moon className="w-6 h-6" />,
@@ -144,11 +147,11 @@ const Expertise: React.FC = () => {
           }`}
         >
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
-            Our Exquisite <span className="text-gold-500">Collection</span>
+            {t('expertise.title')} <span className="text-gold-500">{t('expertise.titleHighlight')}</span>
           </h2>
           <div className="w-20 h-1 bg-gold-500 mx-auto mb-8"></div>
           <p className="text-white/90 text-lg">
-            Discover our complete range of handcrafted jewelry, each piece telling a unique story of tradition, elegance, and timeless beauty.
+            {t('expertise.subtitle')}
           </p>
         </div>
 
@@ -171,16 +174,16 @@ const Expertise: React.FC = () => {
           <div className="inline-block p-1 bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 rounded-lg">
             <div className="bg-black-800 px-8 py-6 rounded-lg">
               <h3 className="text-xl font-serif font-bold text-white mb-2">
-                Can't Find What You're Looking For?
+                {t('expertise.customTitle')}
               </h3>
               <p className="text-white/80 mb-4">
-                We specialize in custom jewelry design. Let us create something unique just for you.
+                {t('expertise.customDesc')}
               </p>
               <RouterLink 
                 to="/ContactUs"
                 className="inline-flex items-center px-6 py-3 bg-gold-500 text-black-900 font-medium rounded-lg hover:bg-gold-600 transition-colors duration-200"
               >
-                Contact Us for Custom Design
+                {t('expertise.customCta')}
                 <ArrowRight className="w-4 h-4 ml-2" />
               </RouterLink>
             </div>

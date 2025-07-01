@@ -3,6 +3,7 @@ import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { format } from 'date-fns';
 import { supabase, Feedback } from '../lib/supabase';
 import { useInView } from '../hooks/useInView';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const FeedbackCard: React.FC<{ feedback: Feedback; isLatest?: boolean }> = ({ feedback, isLatest }) => {
   const { ref, inView } = useInView({ threshold: 0.1 });
@@ -47,6 +48,7 @@ const FeedbackCard: React.FC<{ feedback: Feedback; isLatest?: boolean }> = ({ fe
 const FeedbackList: React.FC = () => {
   const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const fetchFeedbacks = async () => {
@@ -105,13 +107,9 @@ const FeedbackList: React.FC = () => {
     <div className="space-y-8">
       {/* Latest Feedback */}
       {latestFeedback && (
-        // <div className="mb-12">
-        //   <h3 className="text-xl font-serif font-bold text-white mb-6">Latest Feedback</h3>
-        //   <FeedbackCard feedback={latestFeedback} isLatest={true} />
-        // </div>
         <div className="mb-12">
           <div className="bg-black-800 p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-serif font-bold text-white mb-6">Latest Feedback</h3>
+            <h3 className="text-xl font-serif font-bold text-white mb-6">{t('testimonials.latestTitle')}</h3>
             <FeedbackCard feedback={latestFeedback} isLatest={true} />
           </div>
         </div>
@@ -120,7 +118,7 @@ const FeedbackList: React.FC = () => {
       {/* Carousel for older feedback */}
       {olderFeedbacks.length > 0 && (
         <div>
-          <h3 className="text-xl font-serif font-bold text-white mb-6">More Reviews</h3>
+          <h3 className="text-xl font-serif font-bold text-white mb-6">{t('testimonials.moreTitle')}</h3>
           <div className="relative">
             <div className="overflow-hidden">
               <div className="transition-transform duration-500 ease-in-out">

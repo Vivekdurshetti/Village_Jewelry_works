@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { supabase } from '../lib/supabase';
 import toast from 'react-hot-toast';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const FeedbackForm: React.FC = () => {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [rating, setRating] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,23 +39,23 @@ const FeedbackForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit} className="bg-black-800 p-6 rounded-lg shadow-lg mb-8">
-      <h3 className="text-xl font-serif font-bold text-white mb-6">Share Your Experience</h3>
+      <h3 className="text-xl font-serif font-bold text-white mb-6">{t('testimonials.shareTitle')}</h3>
       
       <div className="mb-4">
-        <label htmlFor="name" className="block text-white/80 mb-2">Name</label>
+        <label htmlFor="name" className="block text-white/80 mb-2">{t('contact.name')}</label>
         <input
           type="text"
           id="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           className="w-full px-4 py-2 bg-black-700 border border-black-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 text-white"
-          placeholder="Your name"
+          placeholder={t('contact.namePlaceholder')}
           required
         />
       </div>
 
       <div className="mb-4">
-        <label htmlFor="message" className="block text-white/80 mb-2">Message</label>
+        <label htmlFor="message" className="block text-white/80 mb-2">{t('contact.message')}</label>
         <textarea
           id="message"
           value={message}
@@ -66,14 +68,14 @@ const FeedbackForm: React.FC = () => {
 
       {/* Emoji Rating Section */}
       <div className="mb-6">
-        <label className="block text-white/80 mb-2">Rating</label>
+        <label className="block text-white/80 mb-2">{t('common.rating')}</label>
         <div className="flex items-center justify-between gap-2">
           {[
-            { value: 5, emoji: "😁", label: "Excellent" },
-            { value: 4, emoji: "🙂", label: "Good" },
-            { value: 3, emoji: "😐", label: "Average" },
-            { value: 2, emoji: "😕", label: "Poor" },
-            { value: 1, emoji: "😨", label: "Worst" },
+            { value: 5, emoji: "😁", label: t('common.excellent') },
+            { value: 4, emoji: "🙂", label: t('common.good') },
+            { value: 3, emoji: "😐", label: t('common.average') },
+            { value: 2, emoji: "😕", label: t('common.poor') },
+            { value: 1, emoji: "😨", label: t('common.worst') },
           ].map((item) => (
             <button
               key={item.value}
@@ -102,7 +104,7 @@ const FeedbackForm: React.FC = () => {
             : 'hover:bg-gold-600'
         }`}
       >
-        {isSubmitting ? 'Submitting...' : 'Submit Feedback'}
+        {isSubmitting ? t('common.submitting') : t('common.submitFeedback')}
       </button>
     </form>
   );

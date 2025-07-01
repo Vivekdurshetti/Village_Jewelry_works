@@ -1,7 +1,10 @@
 import React from 'react';
 import { GemIcon, Facebook, Instagram, MessageCircle, MapPin, Phone, Mail} from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer: React.FC = () => {
+  const { t } = useLanguage();
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -21,7 +24,7 @@ const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-white/70 mb-6">
-              Crafting timeless beauty with precision and passion. Your trusted local jeweller since 2000.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-4">
               <a href="https://facebook.com/villagejewellery" className="w-10 h-10 rounded-full bg-black-800 flex items-center justify-center text-white hover:bg-gold-500 hover:text-black-900 transition-colors">
@@ -37,7 +40,7 @@ const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-serif font-bold text-white mb-6">Quick Links</h4>
+            <h4 className="text-lg font-serif font-bold text-white mb-6">{t('footer.quickLinks')}</h4>
             <ul className="space-y-3">
               {['home', 'about', 'services', 'expertise', 'testimonials', 'contact'].map((item) => (
                 <li key={item}>
@@ -45,23 +48,15 @@ const Footer: React.FC = () => {
                     onClick={() => scrollToSection(item)}
                     className="text-white/70 hover:text-gold-500 transition-colors capitalize"
                   >
-                    {item}
+                    {t(`nav.${item}`) || item}
                   </button>
                 </li>
               ))}
             </ul>
           </div>
           
-          {/* <div>
-            <h4 className="text-lg font-serif font-bold text-white mb-6">Contact</h4>
-            <address className="not-italic text-white/70">
-              <p className="mb-3">📍 Beside RCM shop, Basar Village, <br />Nirmal District, Telangana State</p>
-              <p className="mb-3">📞 +91-9100432526</p>
-              <p className="mb-3">✉️ info@villagejewellery.com</p>
-            </address>
-          </div> */}
           <div>
-            <h4 className="text-lg font-serif font-bold text-white mb-6">Contact</h4>
+            <h4 className="text-lg font-serif font-bold text-white mb-6">{t('contact.contact')}</h4>
             <address className="not-italic text-white/70 space-y-4">
               <p className="flex items-start mb-3">
                 <MapPin className="w-5 h-5 mr-2 text-gold-500 mt-1" />
@@ -98,19 +93,19 @@ const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-serif font-bold text-white mb-6">Business Hours</h4>
+            <h4 className="text-lg font-serif font-bold text-white mb-6">{t('footer.businessHours')}</h4>
             <ul className="space-y-3 text-white/70">
               <li className="flex justify-between">
-                <span>Monday - Friday:</span>
-                <span>10:00 AM - 6:00 PM</span>
+                <span>{t('footer.monday')}</span>
+                <span>{t('footer.mondayHours')}</span>
               </li>
               <li className="flex justify-between">
-                <span>Saturday:</span>
-                <span>10:00 AM - 4:00 PM</span>
+                <span>{t('footer.saturday')}</span>
+                <span>{t('footer.saturdayHours')}</span>
               </li>
               <li className="flex justify-between">
-                <span>Sunday:</span>
-                <span>Closed</span>
+                <span>{t('footer.sunday')}</span>
+                <span>{t('footer.sundayHours')}</span>
               </li>
             </ul>
           </div>
@@ -119,14 +114,14 @@ const Footer: React.FC = () => {
         <div className="border-t border-black-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-white/50 text-sm mb-4 md:mb-0">
-              © 2025 Basar Jewellery. All Rights Reserved.
+              {t('footer.rights')}
             </p>
             <div className="flex space-x-6">
               <a href="#" className="text-white/50 text-sm hover:text-gold-500 transition-colors">
-                Privacy Policy
+                {t('footer.privacy')}
               </a>
               <a href="#" className="text-white/50 text-sm hover:text-gold-500 transition-colors">
-                Terms of Service
+                {t('footer.terms')}
               </a>
             </div>
           </div>

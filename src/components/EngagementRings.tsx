@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/zoom';
 import FeedbackList from './FeedbackList';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ringImages = [
   {
@@ -29,6 +30,7 @@ const ringImages = [
 
 const EngagementRings: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState(0);
+  const { t } = useLanguage();
 
   return (
     <div className="pt-20 bg-gradient-to-b from-black-900 to-black-800">
@@ -45,10 +47,10 @@ const EngagementRings: React.FC = () => {
           <div className="container mx-auto px-4 h-full flex items-center justify-center">
             <div className="text-center max-w-4xl">
               <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 drop-shadow-lg">
-                Engagement Rings for Your <span className="text-gold-500">Perfect Proposal</span>
+                {t('products.engagementRings.title')} <span className="text-gold-500">{t('products.engagementRings.titleHighlight')}</span>
               </h1>
               <p className="text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
-                Begin Your Forever with a Ring as Unique as Your Love
+                {t('products.engagementRings.subtitle')}
               </p>
             </div>
           </div>
@@ -82,32 +84,32 @@ const EngagementRings: React.FC = () => {
 
           <div className="bg-black-800 p-8 rounded-lg shadow-xl">
             <h2 className="text-3xl font-serif font-bold text-white mb-6">
-              Engagement Ring Collection
+              {t('nav.engagementRings')} Collection
             </h2>
             <p className="text-white/90 text-lg mb-8 leading-relaxed">
-              Make your proposal unforgettable with our stunning engagement ring collection. From classic solitaires to vintage-inspired designs, each ring is crafted to capture the essence of your love story and create a moment that will be cherished forever.
+              {t('products.engagementRings.description')}
             </p>
 
             <div className="space-y-4 mb-8">
               <div className="flex items-center text-white/90">
                 <Gem className="w-5 h-5 text-gold-500 mr-3" />
-                Certified Diamond & Gemstones
+                {t('products.engagementRings.features.certified')}
               </div>
               <div className="flex items-center text-white/90">
                 <span className="w-2 h-2 bg-gold-500 rounded-full mr-3"></span>
-                Solitaire, Halo & Vintage Styles
+                {t('products.engagementRings.features.styles')}
               </div>
               <div className="flex items-center text-white/90">
                 <span className="w-2 h-2 bg-gold-500 rounded-full mr-3"></span>
-                18K & 22K Gold Settings
+                {t('products.engagementRings.features.gold')}
               </div>
               <div className="flex items-center text-white/90">
                 <span className="w-2 h-2 bg-gold-500 rounded-full mr-3"></span>
-                Custom Design Consultation
+                {t('products.engagementRings.features.consultation')}
               </div>
               <div className="flex items-center text-white/90">
                 <span className="w-2 h-2 bg-gold-500 rounded-full mr-3"></span>
-                GIA Certified Diamonds
+                {t('products.engagementRings.features.gia')}
               </div>
             </div>
 
@@ -124,14 +126,14 @@ const EngagementRings: React.FC = () => {
                   className="flex-1 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  WhatsApp
+                  {t('common.whatsapp')}
                 </a>
                 <a
                   href="tel:+919100432526"
                   className="flex-1 py-3 bg-black-700 text-white font-medium rounded-lg hover:bg-black-600 transition-colors flex items-center justify-center gap-2"
                 >
                   <Phone className="w-5 h-5" />
-                  Call Now
+                  {t('common.callNow')}
                 </a>
               </div>
             </div>
@@ -151,17 +153,17 @@ const EngagementRings: React.FC = () => {
             </div>
             <div className="bg-black-800/50 p-6 rounded-lg text-center backdrop-blur-sm border border-gold-500/10">
               <Star className="w-8 h-8 text-gold-500 mx-auto mb-4" />
-              <h4 className="font-medium text-white mb-2">Expert Craftsmanship</h4>
+              <h4 className="font-medium text-white mb-2">{t('common.expertCraftsmanship')}</h4>
               <p className="text-white/70">Master jewelers</p>
             </div>
             <div className="bg-black-800/50 p-6 rounded-lg text-center backdrop-blur-sm border border-gold-500/10">
               <Ruler className="w-8 h-8 text-gold-500 mx-auto mb-4" />
-              <h4 className="font-medium text-white mb-2">Custom Design</h4>
+              <h4 className="font-medium text-white mb-2">{t('common.customDesign')}</h4>
               <p className="text-white/70">Unique to your love</p>
             </div>
             <div className="bg-black-800/50 p-6 rounded-lg text-center backdrop-blur-sm border border-gold-500/10">
               <RefreshCw className="w-8 h-8 text-gold-500 mx-auto mb-4" />
-              <h4 className="font-medium text-white mb-2">Lifetime Service</h4>
+              <h4 className="font-medium text-white mb-2">{t('common.lifetimeService')}</h4>
               <p className="text-white/70">Care & maintenance</p>
             </div>
           </div>

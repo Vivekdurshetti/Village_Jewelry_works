@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/zoom';
 import FeedbackList from './FeedbackList';
-
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ringImages = [
   {
@@ -28,23 +28,9 @@ const ringImages = [
   },
 ];
 
-const testimonials = [
-  {
-    name: "Priya Sharma",
-    rating: 5,
-    comment: "Absolutely stunning craftsmanship! The ring exceeded my expectations in every way.",
-    date: "March 2024"
-  },
-  {
-    name: "Rajesh Kumar",
-    rating: 5,
-    comment: "Perfect wedding ring with excellent finish. The customization service was outstanding.",
-    date: "February 2024"
-  }
-];
-
 const GoldRings: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState(0);
+  const { t } = useLanguage();
 
   return (
     <div className="pt-20 bg-gradient-to-b from-black-900 to-black-800">
@@ -61,10 +47,10 @@ const GoldRings: React.FC = () => {
           <div className="container mx-auto px-4 h-full flex items-center justify-center">
             <div className="text-center max-w-4xl">
               <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 drop-shadow-lg">
-                Elegant Gold Rings for Every <span className="text-gold-500">Occasion</span>
+                {t('products.goldRings.title')} <span className="text-gold-500">{t('products.goldRings.titleHighlight')}</span>
               </h1>
               <p className="text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
-                Timeless Designs, Artisan Craftsmanship, and Purity You Can Trust
+                {t('products.goldRings.subtitle')}
               </p>
             </div>
           </div>
@@ -98,37 +84,37 @@ const GoldRings: React.FC = () => {
 
           <div className="bg-black-800 p-8 rounded-lg shadow-xl">
             <h2 className="text-3xl font-serif font-bold text-white mb-6">
-              Handcrafted Gold Ring Collection
+              {t('nav.goldRings')} Collection
             </h2>
             <p className="text-white/90 text-lg mb-8 leading-relaxed">
-              Experience the perfect blend of traditional craftsmanship and contemporary design with our exclusive gold ring collection. Each piece is meticulously handcrafted by our master artisans using the finest 22K and 24K gold, ensuring unmatched quality and timeless beauty.
+              {t('products.goldRings.description')}
             </p>
 
             <div className="space-y-4 mb-8">
               <div className="flex items-center text-white/90">
                 <span className="w-2 h-2 bg-gold-500 rounded-full mr-3"></span>
-                Available in 22K & 24K Purity
+                {t('products.goldRings.features.purity')}
               </div>
               <div className="flex items-center text-white/90">
                 <span className="w-2 h-2 bg-gold-500 rounded-full mr-3"></span>
-                Handcrafted by Master Artisans
+                {t('products.goldRings.features.handcrafted')}
               </div>
               <div className="flex items-center text-white/90">
                 <span className="w-2 h-2 bg-gold-500 rounded-full mr-3"></span>
-                Custom Sizes & Engraving Available
+                {t('products.goldRings.features.custom')}
               </div>
               <div className="flex items-center text-white/90">
                 <span className="w-2 h-2 bg-gold-500 rounded-full mr-3"></span>
-                BIS Hallmarked Jewelry
+                {t('products.goldRings.features.hallmarked')}
               </div>
             </div>
 
             <div className="space-y-4">
               <button className="w-full py-4 bg-gold-500 text-black-900 font-medium rounded-lg hover:bg-gold-600 transition-colors">
-                Shop Now
+                {t('products.goldRings.cta.shop')}
               </button>
               <button className="w-full py-4 border-2 border-gold-500 text-gold-500 font-medium rounded-lg hover:bg-gold-500 hover:text-black-900 transition-colors">
-                Request Custom Ring
+                {t('products.goldRings.cta.custom')}
               </button>
               <div className="flex gap-4">
                 <a
@@ -136,14 +122,14 @@ const GoldRings: React.FC = () => {
                   className="flex-1 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  WhatsApp
+                  {t('common.whatsapp')}
                 </a>
                 <a
                   href="tel:+919100432526"
                   className="flex-1 py-3 bg-black-700 text-white font-medium rounded-lg hover:bg-black-600 transition-colors flex items-center justify-center gap-2"
                 >
                   <Phone className="w-5 h-5" />
-                  Call Now
+                  {t('common.callNow')}
                 </a>
               </div>
             </div>
@@ -158,23 +144,23 @@ const GoldRings: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-black-800/50 p-6 rounded-lg text-center backdrop-blur-sm border border-gold-500/10">
               <Truck className="w-8 h-8 text-gold-500 mx-auto mb-4" />
-              <h4 className="font-medium text-white mb-2">Free Delivery</h4>
-              <p className="text-white/70">Secure shipping nationwide</p>
+              <h4 className="font-medium text-white mb-2">{t('common.freeDelivery')}</h4>
+              <p className="text-white/70">{t('common.secureShipping')}</p>
             </div>
             <div className="bg-black-800/50 p-6 rounded-lg text-center backdrop-blur-sm border border-gold-500/10">
               <Star className="w-8 h-8 text-gold-500 mx-auto mb-4" />
-              <h4 className="font-medium text-white mb-2">Lifetime Polish</h4>
-              <p className="text-white/70">Free polishing service</p>
+              <h4 className="font-medium text-white mb-2">{t('common.lifetimePolish')}</h4>
+              <p className="text-white/70">{t('common.freePolishing')}</p>
             </div>
             <div className="bg-black-800/50 p-6 rounded-lg text-center backdrop-blur-sm border border-gold-500/10">
               <RefreshCw className="w-8 h-8 text-gold-500 mx-auto mb-4" />
-              <h4 className="font-medium text-white mb-2">Easy Returns</h4>
-              <p className="text-white/70">15-day return policy</p>
+              <h4 className="font-medium text-white mb-2">{t('common.easyReturns')}</h4>
+              <p className="text-white/70">{t('common.returnPolicy')}</p>
             </div>
             <div className="bg-black-800/50 p-6 rounded-lg text-center backdrop-blur-sm border border-gold-500/10">
               <Ruler className="w-8 h-8 text-gold-500 mx-auto mb-4" />
-              <h4 className="font-medium text-white mb-2">Customization</h4>
-              <p className="text-white/70">Personalized designs</p>
+              <h4 className="font-medium text-white mb-2">{t('common.customization')}</h4>
+              <p className="text-white/70">{t('common.personalizedDesigns')}</p>
             </div>
           </div>
         </div>
@@ -184,11 +170,11 @@ const GoldRings: React.FC = () => {
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
-                What Our <span className="text-gold-500">Clients Say</span>
+                {t('testimonials.title')} <span className="text-gold-500">{t('testimonials.titleHighlight')}</span>
               </h2>
               <div className="w-20 h-1 bg-gold-500 mx-auto mb-8"></div>
               <p className="text-white/80 text-lg">
-                Read what our valued customers have to say about their experience with us
+                {t('testimonials.subtitle')}
               </p>
             </div>
             <div className="max-w-4xl mx-auto">
