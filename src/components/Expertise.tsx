@@ -13,7 +13,7 @@ const ProductCard: React.FC<{
   delay: number;
 }> = ({ title, description, image, icon, link, delay }) => {
   const { ref, inView } = useInView({ threshold: 0.1 });
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <div 
@@ -53,7 +53,7 @@ const ProductCard: React.FC<{
         
         {/* CTA Button */}
         <RouterLink 
-          to={link}
+          to={`/${language}${link}`}
           className="inline-flex items-center justify-center w-full py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-black-900 font-medium rounded-lg hover:from-gold-600 hover:to-gold-700 transition-all duration-200 transform hover:translate-y-[-2px] hover:shadow-lg group"
         >
           <span>{t('expertise.knowMore')}</span>
@@ -69,7 +69,7 @@ const ProductCard: React.FC<{
 
 const Expertise: React.FC = () => {
   const { ref, inView } = useInView({ threshold: 0.1 });
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   const products = [
     {
@@ -180,7 +180,7 @@ const Expertise: React.FC = () => {
                 {t('expertise.customDesc')}
               </p>
               <RouterLink 
-                to="/ContactUs"
+                to={`/${language}/ContactUs`}
                 className="inline-flex items-center px-6 py-3 bg-gold-500 text-black-900 font-medium rounded-lg hover:bg-gold-600 transition-colors duration-200"
               >
                 {t('expertise.customCta')}

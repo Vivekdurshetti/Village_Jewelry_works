@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -30,8 +30,8 @@ const Header: React.FC = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    if (window.location.pathname !== '/') {
-      window.location.href = `/#${sectionId}`;
+    if (window.location.pathname !== `/${language}`) {
+      window.location.href = `/${language}#${sectionId}`;
       return;
     }
     
@@ -47,25 +47,25 @@ const Header: React.FC = () => {
     {
       title: t('nav.rings'),
       items: [
-        { name: t('nav.goldRings'), path: '/gold-rings' },
-        { name: t('nav.weddingRings'), path: '/wedding-rings' },
-        { name: t('nav.engagementRings'), path: '/engagement-rings' },
+        { name: t('nav.goldRings'), path: `/${language}/gold-rings` },
+        { name: t('nav.weddingRings'), path: `/${language}/wedding-rings` },
+        { name: t('nav.engagementRings'), path: `/${language}/engagement-rings` },
       ]
     },
     {
       title: t('nav.necklaces'),
       items: [
-        { name: t('nav.goldChains'), path: '/gold-chains' },
-        { name: t('nav.mangalsutra'), path: '/mangalsutra' },
-        { name: t('nav.pendantSets'), path: '/pendant-sets' },
+        { name: t('nav.goldChains'), path: `/${language}/gold-chains` },
+        { name: t('nav.mangalsutra'), path: `/${language}/mangalsutra` },
+        { name: t('nav.pendantSets'), path: `/${language}/pendant-sets` },
       ]
     },
     {
       title: t('nav.earrings'),
       items: [
-        { name: t('nav.goldStuds'), path: '/gold-studs' },
-        { name: t('nav.jhumkas'), path: '/jhumkas' },
-        { name: t('nav.chandbali'), path: '/chandbali' },
+        { name: t('nav.goldStuds'), path: `/${language}/gold-studs` },
+        { name: t('nav.jhumkas'), path: `/${language}/jhumkas` },
+        { name: t('nav.chandbali'), path: `/${language}/chandbali` },
       ]
     }
   ];
@@ -80,7 +80,7 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center">
+          <Link to={`/${language}`} className="flex items-center">
             <GemIcon className="text-gold-500 h-8 w-8" />
             <span className="ml-2 text-xl md:text-2xl font-serif font-semibold text-white">
               Basar <span className="text-gold-500">Jewellery</span>
@@ -89,7 +89,7 @@ const Header: React.FC = () => {
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-white hover:text-gold-500 transition-colors font-medium">
+            <Link to={`/${language}`} className="text-white hover:text-gold-500 transition-colors font-medium">
               {t('nav.home')}
             </Link>
             
@@ -146,7 +146,7 @@ const Header: React.FC = () => {
               {t('nav.testimonials')}
             </button>
             <Link
-              to="/ContactUs"
+              to={`/${language}/ContactUs`}
               className="text-white hover:text-gold-500 transition-colors font-medium"
             >
               {t('nav.contact')}
@@ -181,7 +181,7 @@ const Header: React.FC = () => {
             <ul className="flex flex-col space-y-4">
               <li>
                 <Link
-                  to="/"
+                  to={`/${language}`}
                   className="text-white hover:text-gold-500 transition-colors font-medium text-lg block py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -235,7 +235,7 @@ const Header: React.FC = () => {
               
               <li>
                 <Link
-                  to="/ContactUs"
+                  to={`/${language}/ContactUs`}
                   className="text-white hover:text-gold-500 transition-colors font-medium text-lg block py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
